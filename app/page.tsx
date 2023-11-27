@@ -19,7 +19,7 @@ function handleFinalState(resultCode, dropin) {
 
 export default function Home() {
   const dropinRef = useRef<HTMLDivElement>(null);
-  const isAdyenWebInitialized = useRef<boolean>(false);
+  // const isAdyenWebInitialized = useRef<boolean>(false);
 
   const loadAdyen = useCallback(async () => {
     console.log('Initializing AdyenWeb');
@@ -72,10 +72,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    if (!isAdyenWebInitialized.current) {
-      isAdyenWebInitialized.current = true;
-      loadAdyen();
-    }
+      loadAdyen();    
   }, [loadAdyen]);
 
 
